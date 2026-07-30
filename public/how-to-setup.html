@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Set Up an App Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="guide-header">
+      <a class="back-link" href="index.html">← Back to the simulator</a>
+      <h1>Set up an app registration for the Third-Party Graph Simulator</h1>
+      <p>Use this guide to create an Entra app registration and collect the values that the simulator needs for app-only authentication.</p>
+    </header>
+
+    <section class="card guide-card">
+      <ol class="guide-list">
+        <li>
+          <h2>Create an app in Microsoft Entra</h2>
+          <p>Open Microsoft Entra admin center and go to <strong>App registrations</strong>. Click <strong>New registration</strong>, choose a name, and complete the registration form before selecting <strong>Register</strong>.</p>
+          <img src="images/image-8.png" alt="Application registration form in Microsoft Entra" />
+        </li>
+
+        <li>
+          <h2>Copy the application identifiers</h2>
+          <p>After the app is created, the overview page shows the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>. Save both values because they will be used later in the simulator.</p>
+          <img src="images/image-10.png" alt="Application overview with client and tenant IDs" />
+        </li>
+
+        <li>
+          <h2>Create a client secret</h2>
+          <p>Open <strong>Certificates &amp; secrets</strong> for the app, select <strong>Client secrets</strong>, and click <strong>New client secret</strong>. Give the secret a name and choose an expiration period, then click <strong>Add</strong>.</p>
+          <img src="images/image-11.png" alt="Create a client secret in the app registration" />
+        </li>
+
+        <li>
+          <h2>Protect the secret value</h2>
+          <p>The value shown in the secret row is the only time it is fully displayed. Copy it immediately and store it somewhere safe because it will be hidden after you leave the page.</p>
+          <img src="images/image-13.png" alt="Client secret value shown after creation" />
+        </li>
+
+        <li>
+          <h2>Add Microsoft Graph permissions</h2>
+          <p>Open the <strong>API permissions</strong> tab, click <strong>Add a permission</strong>, choose <strong>Microsoft Graph</strong>, choose <strong>Application permissions</strong>, then select the application permissions your scenario requires and click <strong>Add permissions</strong>.</p>
+          <img src="images/image-14.png" alt="Microsoft Graph permission options" />
+          <img src="images/image-15.png" alt="Application permissions selection" />
+        </li>
+
+        <li>
+          <h2>Grant the permissions</h2>
+          <p>After the permissions are added, select <strong>Grant admin consent</strong> and confirm the prompt. Make sure the permission type is set to <strong>Application</strong> for this client-credential flow.</p>
+          <img src="images/image-19.png" alt="Configured permission grant access" />
+        </li>
+
+        <li>
+          <h2>Use the values in the simulator</h2>
+          <p>To test the flow in the Third-Party Graph Simulator, you will need:</p>
+          <ul class="guide-checklist">
+            <li>Client ID (also called Application ID)</li>
+            <li>Tenant ID</li>
+            <li>Client secret</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <a class="back-link" href="index.html">← Back to the simulator</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Third-Party Graph Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Third-Party Graph Simulator</h1>
+      <p>Replicate a third-party app’s client-credential authentication flow and test Microsoft Graph calls for support investigations.</p>
+    </header>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Authentication Settings</h2>
+        <a class="inline-link" href="how-to-setup.html">How to set up the app registration</a>
+      </div>
+      <div class="form-grid half">
+        <label>Tenant ID<input id="tenantId" placeholder="Tenant ID" /></label>
+        <label>Client ID<input id="clientId" placeholder="Client ID" /></label>
+        <label>Client Secret<input id="clientSecret" type="password" placeholder="Client Secret" /></label>
+      </div>
+      <div class="button-row">
+        <button id="getTokenButton">Acquire Token</button>
+        <button id="clearButton" class="secondary">Clear Response</button>
+      </div>
+      <div class="output-toolbar">
+        <span class="output-label">Token response</span>
+        <button id="toggleTokenButton" class="secondary small" type="button" disabled>Show full response</button>
+      </div>
+      <pre id="tokenResult" class="output">Token response will appear here.</pre>
+    </section>
+
+    <section class="card">
+      <h2>Graph Request Simulation</h2>
+      <div class="form-grid wide-right">
+        <label>HTTP Method
+          <select id="method">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PATCH</option>
+            <option>PUT</option>
+            <option>DELETE</option>
+          </select>
+        </label>
+        <label>Graph Path
+          <input id="graphPath" placeholder="e.g. /users or https://graph.microsoft.com/v1.0/users" />
+        </label>
+      </div>
+      <label>Request Body<textarea id="requestBody" placeholder='{"displayName":"Example"}'></textarea></label>
+      <div class="button-row">
+        <button id="sendRequestButton">Send Graph Request</button>
+      </div>
+      <div class="history-panel">
+        <div class="history-header">
+          <h3>Saved Graph Requests</h3>
+          <button id="clearHistoryButton" class="secondary small" type="button">Clear history</button>
+        </div>
+        <details>
+          <summary>See history</summary>
+          <ul id="requestHistoryList" class="history-list"></ul>
+        </details>
+        
+      </div>
+      <pre id="responseResult" class="output">Graph response will appear here.</pre>
+    </section>
+  </div>
+  <script src="storage-utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
