@@ -34,7 +34,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
    ![github download](./public/images/github-download.png)
 
 2. Unzip the download
-3. Open a terminal in `third-party-graph-simulator` folder. Confirm you are in the correct folder before running the following commands. If you enter `ls` in the terminal it will return the folders/files seen below.
+3. Open a terminal in `third-party-graph-simulator-main` folder. Confirm you are in the correct folder before running the following commands. If you enter `ls` in the terminal it will return the folders/files seen below.
 
 ![app path](./public/images/app-path.png)
 
