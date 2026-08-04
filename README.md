@@ -1,7 +1,7 @@
 # Third-Party Graph Simulator
 
 > [!WARNING]
-> ***This is for internal testing only. Not for production.***
+> ***This is for internal testing only. Not for production. DO NOT ENTER CUSTOMER DATA***
 
 A lightweight standalone website for testing a third-party app’s client-credential authentication flow and test Microsoft Graph calls for support investigations.
 
@@ -52,4 +52,4 @@ A lightweight standalone website for testing a third-party app’s client-creden
 5. Click **Send Graph Request**.
 
 > [!WARNING]
-> ***This is for internal testing only. Not for production.***
+> ***This is for internal testing only. Not for production. DO NOT ENTER CUSTOMER DATA***
