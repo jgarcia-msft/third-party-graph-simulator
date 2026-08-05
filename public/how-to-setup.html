@@ -6,65 +6,158 @@
   <title>How to Set Up an App Registration</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="container">
-    <header class="guide-header">
-      <a class="back-link" href="index.html">← Back to the simulator</a>
-      <h1>Set up an app registration for the Third-Party Graph Simulator</h1>
-      <p>Use this guide to create an Entra app registration and collect the values that the simulator needs for app-only authentication.</p>
+<body class="guide-page">
+  <div class="guide-shell">
+    <header class="guide-topbar">
+      <a class="back-link" href="index.html">&larr; Back to simulator</a>
+      <div class="guide-brand" aria-label="Microsoft Entra setup guide">
+        <span class="guide-brand-mark" aria-hidden="true"></span>
+        <span>Microsoft Entra setup</span>
+      </div>
+      <span class="slide-count" aria-live="polite">1 / 10</span>
     </header>
 
-    <section class="card guide-card">
-      <ol class="guide-list">
-        <li>
-          <h2>Create an app in Microsoft Entra</h2>
-          <p>Open Microsoft Entra admin center and go to <strong>App registrations</strong>. Click <strong>New registration</strong>, choose a name, and complete the registration form before selecting <strong>Register</strong>.</p>
-          <img src="images/image-8.png" alt="Application registration form in Microsoft Entra" />
-        </li>
+    <main class="presentation" aria-label="App registration setup presentation">
+      <nav class="slide-nav" aria-label="Presentation slides">
+        <p class="slide-nav-label">Setup guide</p>
+        <ol>
+          <li><button type="button" class="slide-tab is-active" data-slide-target="0" aria-current="step"><span>01</span>Introduction</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="1"><span>02</span>Register app</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="2"><span>03</span>Complete form</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="3"><span>04</span>Copy IDs</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="4"><span>05</span>Create secret</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="5"><span>06</span>Protect secret</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="6"><span>07</span>Add Graph</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="7"><span>08</span>Select access</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="8"><span>09</span>Grant consent</button></li>
+          <li><button type="button" class="slide-tab" data-slide-target="9"><span>10</span>Thank you</button></li>
+        </ol>
+      </nav>
 
-        <li>
-          <h2>Copy the application identifiers</h2>
-          <p>After the app is created, the overview page shows the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>. Save both values because they will be used later in the simulator.</p>
-          <img src="images/image-10.png" alt="Application overview with client and tenant IDs" />
-        </li>
+      <section class="slide-stage" aria-live="polite">
+        <div class="slide-progress" aria-hidden="true"><span></span></div>
 
-        <li>
-          <h2>Create a client secret</h2>
-          <p>Open <strong>Certificates &amp; secrets</strong> for the app, select <strong>Client secrets</strong>, and click <strong>New client secret</strong>. Give the secret a name and choose an expiration period, then click <strong>Add</strong>.</p>
-          <img src="images/image-11.png" alt="Create a client secret in the app registration" />
-        </li>
+        <article class="guide-slide intro-slide is-active" data-slide="0">
+          <div class="slide-copy">
+            <h1>Create an app in Microsoft Entra</h1>
+            <p>Registering an app and granting Microsoft Graph permissions</p>
+          </div>
+          <div class="intro-graphic" aria-hidden="true"><span>Microsoft</span><strong>Entra</strong></div>
+        </article>
 
-        <li>
-          <h2>Protect the secret value</h2>
-          <p>The value shown in the secret row is the only time it is fully displayed. Copy it immediately and store it somewhere safe because it will be hidden after you leave the page.</p>
-          <img src="images/image-13.png" alt="Client secret value shown after creation" />
-        </li>
+        <article class="guide-slide" data-slide="1" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 1 &middot; App registration</p>
+            <h2>Register a new app</h2>
+            <p>Open the Microsoft Entra admin center and go to <strong>App registrations</strong>. Click <strong>New registration</strong>.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-01.png" alt="Microsoft Entra App registrations page with App registrations and New registration highlighted" />
+            <figcaption>Open App registrations and start a new registration.</figcaption>
+          </figure>
+        </article>
 
-        <li>
-          <h2>Add Microsoft Graph permissions</h2>
-          <p>Open the <strong>API permissions</strong> tab, click <strong>Add a permission</strong>, choose <strong>Microsoft Graph</strong>, choose <strong>Application permissions</strong>, then select the application permissions your scenario requires and click <strong>Add permissions</strong>.</p>
-          <img src="images/image-14.png" alt="Microsoft Graph permission options" />
-          <img src="images/image-15.png" alt="Application permissions selection" />
-        </li>
+        <article class="guide-slide" data-slide="2" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 2 &middot; Registration form</p>
+            <h2>Complete the registration form</h2>
+            <p>Enter a <strong>Name</strong>, choose the <strong>Supported account types</strong>, and set the <strong>Redirect URI</strong>. Use the same values shown here.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-02.png" alt="Microsoft Entra registration form with name, single-tenant account type, and localhost redirect URI highlighted" />
+            <figcaption>Complete the three highlighted registration fields.</figcaption>
+          </figure>
+        </article>
 
-        <li>
-          <h2>Grant the permissions</h2>
-          <p>After the permissions are added, select <strong>Grant admin consent</strong> and confirm the prompt. Make sure the permission type is set to <strong>Application</strong> for this client-credential flow.</p>
-          <img src="images/image-19.png" alt="Configured permission grant access" />
-        </li>
+        <article class="guide-slide" data-slide="3" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 3 &middot; Identifiers</p>
+            <h2>Copy the application identifiers</h2>
+            <p>The overview page shows the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>. Save both values &mdash; the simulator needs them later.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-03.png" alt="Microsoft Entra application overview with the client ID and tenant ID highlighted" />
+            <figcaption>Copy the Application ID and Directory ID.</figcaption>
+          </figure>
+        </article>
 
-        <li>
-          <h2>Use the values in the simulator</h2>
-          <p>To test the flow in the Third-Party Graph Simulator, you will need:</p>
-          <ul class="guide-checklist">
-            <li>Client ID (also called Application ID)</li>
-            <li>Tenant ID</li>
-            <li>Client secret</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-    <a class="back-link" href="index.html">← Back to the simulator</a>
+        <article class="guide-slide" data-slide="4" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 4 &middot; Credentials</p>
+            <h2>Create a client secret</h2>
+            <p>Open <strong>Certificates &amp; secrets</strong>, select <strong>Client secrets</strong>, and click <strong>New client secret</strong>. Name it, choose an expiration period, then click <strong>Add</strong>.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-04.png" alt="Certificates and secrets page with New client secret and the secret form highlighted" />
+            <figcaption>Create and add a new client secret.</figcaption>
+          </figure>
+        </article>
+
+        <article class="guide-slide" data-slide="5" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 5 &middot; Important</p>
+            <h2>Protect the secret value</h2>
+            <p>The <strong>Value</strong> column is shown in full only once. Copy it immediately and store it somewhere safe &mdash; it is hidden after you leave the page.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-05.png" alt="Client secrets table with the secret value and copy control highlighted" />
+            <figcaption>Copy the client secret value immediately.</figcaption>
+          </figure>
+        </article>
+
+        <article class="guide-slide" data-slide="6" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 6 &middot; Microsoft Graph</p>
+            <h2>Add Microsoft Graph permissions</h2>
+            <p>Open the <strong>API permissions</strong> tab, click <strong>Add a permission</strong>, and choose <strong>Microsoft Graph</strong>.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-06.png" alt="API permissions page and Request API permissions panel with Microsoft Graph highlighted" />
+            <figcaption>Add Microsoft Graph as an API permission.</figcaption>
+          </figure>
+        </article>
+
+        <article class="guide-slide" data-slide="7" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 7 &middot; Application access</p>
+            <h2>Select the permissions you need</h2>
+            <p>Choose <strong>Application permissions</strong>, then search for the <strong>DeviceManagementManagedDevices</strong> set. Check the <strong>ReadWrite.All</strong> permission &mdash; a POST request needs write access &mdash; then click <strong>Add permissions</strong>.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-07.png" alt="Microsoft Graph application permissions with DeviceManagementManagedDevices.ReadWrite.All selected" />
+            <figcaption>Select DeviceManagementManagedDevices.ReadWrite.All.</figcaption>
+          </figure>
+        </article>
+
+        <article class="guide-slide" data-slide="8" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Step 8 &middot; Admin consent</p>
+            <h2>Grant the permissions</h2>
+            <p>Select <strong>Grant admin consent</strong> for your tenant and confirm the prompt. Keep the permission type set to <strong>Application</strong> for the client-credential flow, then check that <strong>Status</strong> shows <strong>Granted</strong>.</p>
+          </div>
+          <figure class="slide-media">
+            <img src="images/entra-step-08.png" alt="API permissions page with Grant admin consent, confirmation, application type, and status highlighted" />
+            <figcaption>Grant tenant-wide admin consent and verify the status.</figcaption>
+          </figure>
+        </article>
+
+        <article class="guide-slide final-slide" data-slide="9" hidden>
+          <div class="slide-copy">
+            <p class="slide-kicker">Setup complete</p>
+            <h2>Thank you</h2>
+            <a class="guide-cta" href="index.html">Open the simulator <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="completion-graphic" aria-hidden="true"><span>&check;</span><strong>Registration complete</strong></div>
+        </article>
+
+        <footer class="slide-controls">
+          <button type="button" class="slide-arrow" id="previous-slide" aria-label="Previous slide" title="Previous slide (Left arrow)">&larr;</button>
+          <p><strong class="current-slide-title">Introduction</strong><span>Use arrow keys to navigate</span></p>
+          <button type="button" class="slide-arrow" id="next-slide" aria-label="Next slide" title="Next slide (Right arrow)">&rarr;</button>
+        </footer>
+      </section>
+    </main>
   </div>
+  <script src="how-to-setup.js"></script>
 </body>
 </html>
