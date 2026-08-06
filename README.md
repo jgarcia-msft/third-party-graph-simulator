@@ -33,23 +33,27 @@ A lightweight standalone website for testing a third-party app’s client-creden
 
    ![github download](./public/images/github-download.png)
 
-2. Unzip the download
-3. Open a terminal in `third-party-graph-simulator-main` folder. Confirm you are in the correct folder before running the following commands. If you enter `ls` in the terminal it will return the folders/files seen below.
+2. Recommneded to create a `C:\temp\` folder and then unzip the download in the temp folder.
+3. Open `third-party-graph-simulator-main` folder. Inside will be another folder named the same `third-party-graph-simulator-main`. Right-Click on the folder and select **Open in Terminal**. Confirm you are in the correct folder before running the following commands. If you enter `ls` in the terminal it will return the following folders/files seen below.
 
 ![app path](./public/images/app-path.png)
 
 4. Run `npm install`
 5. Run `npm start`
-6. Open `http://localhost:3000`
+   
+![npm start](./public/images/npm-start.png)
+
+6. Open web browser and go to `http://localhost:3000`
 
 
 ## Usage
 
-1. Enter your Entra ID Tenant ID, Client ID, and Client Secret.
+1. Enter your Tenant ID, Client ID, and Client Secret.
 2. Click **Acquire Token** to fetch an access token.
-3. Enter a Graph path such as `/users` or a full URL.
+3. Enter a Graph path for example `/users` or a full URL `https://graph.microsoft.com/v1.0/users`.
 4. Choose an HTTP method and optionally provide JSON request body.
 5. Click **Send Graph Request**.
+6. When done testing to stop the server either (Recommended) (Recommended) enter `ctrl+c` in the same terminal or close the terminal.
 
 > [!WARNING]
 > ***This is for internal testing only. Not for production. DO NOT ENTER CUSTOMER DATA***
