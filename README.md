@@ -44,6 +44,9 @@ A lightweight standalone website for testing a third-party app’s client-creden
 ![npm start](./public/images/npm-start.png)
 
 6. Open web browser and go to `http://localhost:3000`
+7. After the site is launched there is a link to guide you on **How to set up the app registration**
+
+![how to set up the app registration](./public/images/how-to-set-up-app-registration.png)
 
 
 ## Usage
