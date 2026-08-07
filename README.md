@@ -20,6 +20,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 	- Click **Grant admin consent** for the permissions you added.
 
 **Note: After you setup and run the app there is a link for step by step instructions to setup an app in Entra.**
+- **Repo guide:** You can also follow the GitHub-friendly setup walkthrough in [HOW-TO-SETUP.md](./HOW-TO-SETUP.md).
 - **Port availability:** The server listens on port `3000` by default (override with the `PORT` environment variable).
 
 
@@ -48,6 +49,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 
 ![how to set up the app registration](./public/images/how-to-set-up-app-registration.png)
 
+Or you can go to the [How to setup])(HOW-TO-SETUP.MD)
 
 ## Usage
 
