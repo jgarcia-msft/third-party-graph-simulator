@@ -148,6 +148,12 @@ function clearCredentialsFromStorage() {
   }
 }
 
+function clearAllStoredData() {
+  clearTokenFromStorage();
+  clearRequestHistory();
+  clearCredentialsFromStorage();
+}
+
 var storageUtils = {
   STORAGE_KEYS,
   buildStoredTokenResponse,
@@ -160,7 +166,8 @@ var storageUtils = {
   clearRequestHistory,
   saveCredentialsToStorage,
   loadCredentialsFromStorage,
-  clearCredentialsFromStorage
+  clearCredentialsFromStorage,
+  clearAllStoredData
 };
 
 if (typeof module !== 'undefined') {

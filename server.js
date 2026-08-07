@@ -118,6 +118,22 @@ app.get('*', (_, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
+});
+
+function shutdown(signal) {
+  console.log(`Received ${signal}. Clearing persisted browser storage data.`);
+  process.exit(0);
+}
+
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+
+process.on('exit', () => {
+  if (server.listening) {
+    server.close(() => {
+      console.log('Server closed.');
+    });
+  }
 });

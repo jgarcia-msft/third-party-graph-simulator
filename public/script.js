@@ -16,6 +16,8 @@ const bodyInput = document.getElementById('requestBody');
 let tokenResponseData = null;
 let showFullTokenResponse = false;
 let requestHistory = [];
+let serverHealthCheckTimer = null;
+let storageClearedDueToServerShutdown = false;
 
 const storageHelper = window.storageUtils;
 
@@ -161,6 +163,42 @@ function resetTokenResponseState() {
   renderTokenResponse();
 }
 
+function clearStoredDataBecauseServerStopped() {
+  if (storageClearedDueToServerShutdown) {
+    return;
+  }
+
+  storageClearedDueToServerShutdown = true;
+  storageHelper.clearAllStoredData();
+  resetTokenResponseState();
+  requestHistory = [];
+  renderRequestHistory();
+  tokenResult.textContent = 'The server stopped. Stored app data was cleared.';
+  responseResult.textContent = 'The server stopped. Stored app data was cleared.';
+}
+
+async function checkServerHealth() {
+  try {
+    const response = await fetch('/api/health', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`Health check failed with status ${response.status}`);
+    }
+
+    storageClearedDueToServerShutdown = false;
+  } catch {
+    clearStoredDataBecauseServerStopped();
+  }
+}
+
+function startServerHealthMonitor() {
+  if (serverHealthCheckTimer) {
+    return;
+  }
+
+  checkServerHealth();
+  serverHealthCheckTimer = window.setInterval(checkServerHealth, 3000);
+}
+
 function toggleTokenResponseView() {
   if (!tokenResponseData) {
     return;
@@ -296,3 +334,8 @@ requestHistoryList.addEventListener('click', (event) => {
 });
 
 loadStoredState();
+startServerHealthMonitor();
+
+window.addEventListener('beforeunload', () => {
+  storageHelper.clearAllStoredData();
+});
