@@ -56,7 +56,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 3. Enter a Graph path for example `/users` or a full URL `https://graph.microsoft.com/v1.0/users`.
 4. Choose an HTTP method and optionally provide JSON request body.
 5. Click **Send Graph Request**.
-6. When done testing to stop the server either (Recommended) (Recommended) enter `ctrl+c` in the same terminal or close the terminal.
+6. When done testing to stop the server by either (Recommended) click into the terminal that servers is running then press keys `ctrl+c` or close the terminal.
 
 > [!WARNING]
 > ***This is for internal testing only. Not for production. DO NOT ENTER CUSTOMER DATA***
