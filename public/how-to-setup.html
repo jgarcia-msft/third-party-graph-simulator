@@ -52,7 +52,7 @@
             <p>Open the Microsoft Entra admin center and go to <strong>App registrations</strong>. Click <strong>New registration</strong>.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-01.png" alt="Microsoft Entra App registrations page with App registrations and New registration highlighted" />
+            <img src="images/entra-step-01a.png" alt="Microsoft Entra App registrations page with App registrations and New registration highlighted" />
             <figcaption>Open App registrations and start a new registration.</figcaption>
           </figure>
         </article>
@@ -61,10 +61,10 @@
           <div class="slide-copy">
             <p class="slide-kicker">Step 2 &middot; Registration form</p>
             <h2>Complete the registration form</h2>
-            <p>Enter a <strong>Name</strong>, choose the <strong>Supported account types</strong>, and set the <strong>Redirect URI</strong>. Use the same values shown here.</p>
+            <p>Enter a <strong>Name</strong>, choose the <strong>Supported account types</strong>, and set the <strong>Redirect URI</strong>. Use the same values shown here. Click <strong>Register</strong></p> 
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-02.png" alt="Microsoft Entra registration form with name, single-tenant account type, and localhost redirect URI highlighted" />
+            <img src="images/entra-step-02a.png" alt="Microsoft Entra registration form with name, single-tenant account type, and localhost redirect URI highlighted" />
             <figcaption>Complete the three highlighted registration fields.</figcaption>
           </figure>
         </article>
@@ -76,7 +76,7 @@
             <p>The overview page shows the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>. Save both values &mdash; the simulator needs them later.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-03.png" alt="Microsoft Entra application overview with the client ID and tenant ID highlighted" />
+            <img src="images/entra-step-03a.png" alt="Microsoft Entra application overview with the client ID and tenant ID highlighted" />
             <figcaption>Copy the Application ID and Directory ID.</figcaption>
           </figure>
         </article>
@@ -88,7 +88,7 @@
             <p>Open <strong>Certificates &amp; secrets</strong>, select <strong>Client secrets</strong>, and click <strong>New client secret</strong>. Name it, choose an expiration period, then click <strong>Add</strong>.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-04.png" alt="Certificates and secrets page with New client secret and the secret form highlighted" />
+            <img src="images/entra-step-04a.png" alt="Certificates and secrets page with New client secret and the secret form highlighted" />
             <figcaption>Create and add a new client secret.</figcaption>
           </figure>
         </article>
@@ -100,7 +100,7 @@
             <p>The <strong>Value</strong> column is shown in full only once. Copy it immediately and store it somewhere safe &mdash; it is hidden after you leave the page.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-05.png" alt="Client secrets table with the secret value and copy control highlighted" />
+            <img src="images/entra-step-05a.png" alt="Client secrets table with the secret value and copy control highlighted" />
             <figcaption>Copy the client secret value immediately.</figcaption>
           </figure>
         </article>
@@ -112,7 +112,7 @@
             <p>Open the <strong>API permissions</strong> tab, click <strong>Add a permission</strong>, and choose <strong>Microsoft Graph</strong>.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-06.png" alt="API permissions page and Request API permissions panel with Microsoft Graph highlighted" />
+            <img src="images/entra-step-06a.png" alt="API permissions page and Request API permissions panel with Microsoft Graph highlighted" />
             <figcaption>Add Microsoft Graph as an API permission.</figcaption>
           </figure>
         </article>
@@ -124,7 +124,7 @@
             <p>Choose <strong>Application permissions</strong>, then search for the <strong>DeviceManagementManagedDevices</strong> set. Check the <strong>ReadWrite.All</strong> permission &mdash; a POST request needs write access &mdash; then click <strong>Add permissions</strong>.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-07.png" alt="Microsoft Graph application permissions with DeviceManagementManagedDevices.ReadWrite.All selected" />
+            <img src="images/entra-step-07a.png" alt="Microsoft Graph application permissions with DeviceManagementManagedDevices.ReadWrite.All selected" />
             <figcaption>Select DeviceManagementManagedDevices.ReadWrite.All.</figcaption>
           </figure>
         </article>
@@ -136,7 +136,7 @@
             <p>Select <strong>Grant admin consent</strong> for your tenant and confirm the prompt. Keep the permission type set to <strong>Application</strong> for the client-credential flow, then check that <strong>Status</strong> shows <strong>Granted</strong>.</p>
           </div>
           <figure class="slide-media">
-            <img src="images/entra-step-08.png" alt="API permissions page with Grant admin consent, confirmation, application type, and status highlighted" />
+            <img src="images/entra-step-08a.png" alt="API permissions page with Grant admin consent, confirmation, application type, and status highlighted" />
             <figcaption>Grant tenant-wide admin consent and verify the status.</figcaption>
           </figure>
         </article>
