@@ -49,7 +49,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 
 ![how to set up the app registration](./public/images/how-to-set-up-app-registration.png)
 
-Or you can go to the [How to setup])(HOW-TO-SETUP.MD)
+Or you can go to the [How to setup](HOW-TO-SETUP.MD)
 
 ## Usage
 
