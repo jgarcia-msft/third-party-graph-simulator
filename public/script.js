@@ -335,7 +335,3 @@ requestHistoryList.addEventListener('click', (event) => {
 
 loadStoredState();
 startServerHealthMonitor();
-
-window.addEventListener('beforeunload', () => {
-  storageHelper.clearAllStoredData();
-});
