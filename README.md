@@ -39,6 +39,11 @@ No Node.js installation or additional setup is required.
    ![cmd launch](./public/images/cmd-launch.png)
 7. Open browser and enter `http://localhost:3000`
    ![launch browser](./public/images/launch-browser.png)
+8. After the site is launched there is a link to guide you on **How to set up the app registration**
+
+   ![how to set up the app registration](./public/images/how-to-set-up-app-registration.png)
+
+Or you can go to the [How to setup](./HOW-TO-SETUP.md)
 
 > [!NOTE]
 > Run the simulator from the extracted folder. Do not run **Start Graph Simulator.cmd** directly from inside the ZIP.
