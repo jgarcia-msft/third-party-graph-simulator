@@ -30,11 +30,15 @@ A lightweight standalone website for testing a third-party app’s client-creden
 No Node.js installation or additional setup is required.
 
 1. Go to the [Releases](https://github.com/jgarcia-msft/third-party-graph-simulator/releases) section of this repository.
-2. Download the latest **ThirdPartyGraphSimulator-vX.X.X-win-x64.zip**.
+2. Download the latest **ThirdPartyGraphSimulator-vX.X.X-win-x64.zip** under Assets.
+   ![asset release](./public/images/asset-release.png)
 3. Extract the ZIP to a folder on your Windows device.
 4. Open the extracted folder.
 5. Double-click **Start Graph Simulator.cmd**.
-6. The simulator will start locally and automatically open in your default browser. If the browser does not open, then manually open browser and enter `http://localhost:3000`
+6. The simulator will start locally. (Note: Once CMD is opened it will appear as nothing is happening if you see the below then proceed to Step 7)
+   ![cmd launch](./public/images/cmd-launch.png)
+7. Open browser and enter `http://localhost:3000`
+   ![launch browser](./public/images/launch-browser.png)
 
 > [!NOTE]
 > Run the simulator from the extracted folder. Do not run **Start Graph Simulator.cmd** directly from inside the ZIP.
