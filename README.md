@@ -29,7 +29,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 ### 🚀 Quick Start (Recommended)
 No Node.js installation or additional setup is required.
 
-1. Go to the Releases section of this repository.
+1. Go to the [Releases](https://github.com/jgarcia-msft/third-party-graph-simulator/releases) section of this repository.
 2. Download the latest **ThirdPartyGraphSimulator-vX.X.X-win-x64.zip**.
 3. Extract the ZIP to a folder on your Windows device.
 4. Open the extracted folder.
