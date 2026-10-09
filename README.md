@@ -60,7 +60,7 @@ Review the message shown in the command window for startup errors.
 If the browser does not open automatically, use the local URL displayed in the command window.
 Node.js does not need to be installed separately. The required runtime and application dependencies are included in the portable package.
 
-### ⚙️ Manually setup
+### ⚙️ Manually setup (If used the Quick Start then **do not** proceed with these steps)
 
 1. Download Zip
    
