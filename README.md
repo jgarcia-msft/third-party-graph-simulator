@@ -13,7 +13,7 @@ A lightweight standalone website for testing a third-party app’s client-creden
 
 ## Prerequisites
 
-- **Node.js:** Install Node.js (LTS recommended, e.g. Node 18 or later) which includes `npm`. See [How to install Node on Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows) or Recommended [Download and use Node installer](https://nodejs.org/en/download)
+- **Node.js:** Install Node.js (LTS recommended, e.g. Node 18 or later) which includes `npm`. See [How to install Node on Windows](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows) or Recommended [Download and use Node installer](https://nodejs.org/en/download). **Only needed if you follow the manual setup. Recommend using the Quick Start**
 - **Entra ID app registration:** Create an app registration in the Azure portal and configure it for client credentials (app-only) flow:
 	- Note the **Tenant ID**, **Application (client) ID**, and create a **Client secret**.
 	- Grant the app the necessary **Application permissions** for Microsoft Graph (for example, `User.Read.All`, `Group.Read.All`, etc.) depending on the Graph endpoints you will call.
@@ -25,6 +25,33 @@ A lightweight standalone website for testing a third-party app’s client-creden
 
 
 ## Setup
+
+### 🚀 Quick Start (Recommended)
+No Node.js installation or additional setup is required.
+
+1. Go to the Releases section of this repository.
+2. Download the latest **ThirdPartyGraphSimulator-vX.X.X-win-x64.zip**.
+3. Extract the ZIP to a folder on your Windows device.
+4. Open the extracted folder.
+5. Double-click **Start Graph Simulator.cmd**.
+6. The simulator will start locally and automatically open in your default browser. If the browser does not open, then manually open browser and enter `http://localhost:3000`
+
+> [!NOTE]
+> Run the simulator from the extracted folder. Do not run **Start Graph Simulator.cmd** directly from inside the ZIP.
+
+**Stopping the Simulator**
+Close the Third-Party Graph Simulator command window. This stops the local server.
+
+**Troubleshooting**
+If the simulator does not start:
+
+Confirm the ZIP was fully extracted before launching it.
+Confirm the app and runtime folders are still in the same folder as Start Graph Simulator.cmd.
+Review the message shown in the command window for startup errors.
+If the browser does not open automatically, use the local URL displayed in the command window.
+Node.js does not need to be installed separately. The required runtime and application dependencies are included in the portable package.
+
+### ⚙️ Manually setup
 
 1. Download Zip
    

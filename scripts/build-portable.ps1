@@ -347,13 +347,28 @@ if (-not (Test-Path $OutputZip)) {
 }
 
 # ------------------------------------------------------------
-# Clean temporary build files
+# Clean temporary and staging files
 # ------------------------------------------------------------
 
-Write-Step "12. Cleaning temporary files"
+Write-Step "12. Cleaning temporary and staging files"
 
-if (Test-Path $TempRoot) {
+# Remove temporary download/extraction files
+if (Test-Path -LiteralPath $TempRoot) {
     Remove-Item $TempRoot -Recurse -Force
+}
+
+# Only remove the staging folder after confirming that
+# the final ZIP was successfully created.
+if (Test-Path -LiteralPath $OutputZip -PathType Leaf) {
+
+    if (Test-Path -LiteralPath $BuildRoot) {
+        Remove-Item $BuildRoot -Recurse -Force
+        Write-Host "Removed portable build staging folder."
+    }
+
+}
+else {
+    throw "The portable ZIP was not found. Staging files were preserved."
 }
 
 # ------------------------------------------------------------
